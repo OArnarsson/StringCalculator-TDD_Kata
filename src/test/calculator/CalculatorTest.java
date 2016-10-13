@@ -9,4 +9,9 @@ public class CalculatorTest{
   public void testEmptyString(){
     assertEquals(0, Calculator.add(""));
   }
+
+  @Test
+  public void oneIntInput(){
+    assertEquals(9, Calculator.add("9"));
+  }
 }
