@@ -5,6 +5,9 @@ public class Calculator {
     if(text.equals(""))
       return 0;
 
+    if(hasNewLine(text))
+      text = newLineFix(text);
+
     if(text.contains(","))
       return total(split(text));
 
@@ -24,7 +27,14 @@ public class Calculator {
     for(String number : text) {
       total += toInt(number);
     }
-
     return total;
+  }
+
+  public static boolean hasNewLine(String text) {
+    return text.contains("\n");
+  }
+
+  public static String newLineFix(String text) {
+    return text.replaceAll("\n", ",");
   }
 }

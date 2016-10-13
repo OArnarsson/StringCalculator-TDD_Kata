@@ -31,4 +31,10 @@ public class CalculatorTest{
     assertEquals(4, Calculator.add("4,0,0,0,0,0,0,0,0"));
     assertEquals(3, Calculator.add("2,1"));
   }
+
+  @Test //4
+  public void testNewLineInput(){
+  assertEquals(6, Calculator.add("1\n2,3"));
+  assertEquals(10, Calculator.add("1\n2\n3\n2\n2"));
+  }
 }
