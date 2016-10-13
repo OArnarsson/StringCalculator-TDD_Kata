@@ -49,5 +49,12 @@ public class CalculatorTest{
   public void testOverThousand(){
   assertEquals(2, Calculator.add("2"));
   assertEquals(1014, Calculator.add("1232,10,2,3,512345,999"));
+  assertEquals(1000, Calculator.add("1000"));
+  }
+
+  @Test //7
+  public void newDelimeter(){
+  assertEquals(2, Calculator.add("//&\n1&1"));
+  assertEquals(8, Calculator.add("//O\n1O1O1O1O1O1O1O1"));
   }
 }

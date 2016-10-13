@@ -5,6 +5,9 @@ public class Calculator {
     if(text.equals(""))
       return 0;
 
+    if(hasNewDelimeter(text))
+      text = fixDelimeter(text);
+
     if(hasNewLine(text))
       text = newLineFix(text);
 
@@ -50,5 +53,16 @@ public class Calculator {
       }
     }
     return error;
+  }
+
+  private static boolean hasNewDelimeter(String text) {
+    return (text.contains("//") && text.contains("\n"));
+  }
+
+  private static String fixDelimeter(String text) {
+    text = text.substring(2, text.length());
+    char delimeter = text.charAt(0);
+    text = text.substring(2, text.length());
+    return text.replaceAll(String.valueOf(delimeter), ",");
   }
 }
