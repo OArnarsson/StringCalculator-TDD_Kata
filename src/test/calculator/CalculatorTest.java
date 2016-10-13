@@ -5,13 +5,23 @@ import org.junit.Test;
 
 public class CalculatorTest{
 
-  @Test
+
+  @Test //0
   public void testEmptyString(){
     assertEquals(0, Calculator.add(""));
   }
 
-  @Test
+  @Test //1
   public void oneIntInput(){
     assertEquals(9, Calculator.add("9"));
+    assertEquals(4, Calculator.add("4"));
+    assertEquals(129, Calculator.add("129"));
+  }
+
+  @Test //2
+  public void twoIntInput(){
+    assertEquals(9, Calculator.add("5,4"));
+    assertEquals(4, Calculator.add("4,0"));
+    assertEquals(3, Calculator.add("2,1"));
   }
 }
