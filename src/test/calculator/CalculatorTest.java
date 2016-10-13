@@ -44,4 +44,10 @@ public class CalculatorTest{
   assertEquals("-1", Calculator.add("-1,2"));
   assertEquals("-4,-5", Calculator.add("2,-4,3,-5"));
   }
+
+  @Test //6
+  public void testOverThousand(){
+  assertEquals(2, Calculator.add("2"));
+  assertEquals(1014, Calculator.add("1232,10,2,3,512345,999"));
+  }
 }

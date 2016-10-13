@@ -28,7 +28,8 @@ public class Calculator {
       if(toInt(number) < 0)
         throw new IllegalArgumentException(negativeNumber(text));
 
-      total += toInt(number);
+      if(toInt(number) < 1000)
+        total += toInt(number);
     }
     return total;
   }
