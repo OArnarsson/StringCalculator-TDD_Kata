@@ -25,6 +25,9 @@ public class Calculator {
   public static int total(String[] text) {
     int total = 0;
     for(String number : text) {
+      if(toInt(number) < 0)
+        throw new IllegalArgumentException(negativeNumber(text));
+
       total += toInt(number);
     }
     return total;
@@ -36,5 +39,15 @@ public class Calculator {
 
   public static String newLineFix(String text) {
     return text.replaceAll("\n", ",");
+  }
+
+  private static String negativeNumber(String[] numbers) {
+    String error = "Negatives not allowed: ";
+    for(String number : numbers) {
+      if(toInt(number) < 0) {
+        error += number + ", ";
+      }
+    }
+    return error;
   }
 }
