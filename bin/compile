@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ ! -d classes ]; then
+  mkdir classes
+fi
+#on linux
+javac -cp "classes;lib/junit-4.11.jar" src/main/calculator/*.java -d classes
